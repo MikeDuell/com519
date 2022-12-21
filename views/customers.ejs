@@ -16,10 +16,34 @@
 </head>
 <body>
     <%- include('common/header2'); -%>
-    <h1 class="text-center bg-danger ">View Customisations</h1>
+    <h1 class="text-center bg-danger ">View Customers</h1>
 
 
-
+    <table class="table table-bordered table-primary table-striped table-scroll">
+        <thead>
+          <tr>
+            <th scope="col">Serial Number</th>
+            <th scope="col">Customer</th>
+            <th scope="col">Location</th>
+            
+          </tr>
+        </thead>
+        <tbody>
+           <% customers.forEach(function(customer){ %>
+      
+                
+                
+                <td rows="3"><%=  customer.customer %></td>
+                <td><%= customer.location %></td>
+                <td class="text-center">
+                    <a  href="/customers/delete/<%= customer._id %>" class="btn btn-danger btn-xs"><span class="glyphicon glyphicon-remove"></span> Del</a></td>
+                
+                
+            </tr> <% }); %>
+          
+            
+        </tbody>
+      </table>
 
 
 

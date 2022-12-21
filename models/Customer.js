@@ -2,14 +2,15 @@
 const mongoose = require("mongoose");
 const {Schema} = mongoose;
 
-const adherenceSchema = new Schema(
+const customerSchema = new Schema(
     {
-        serialnumber: String,
+        
         customer: String,
         location: String,
+        
     },
     {timestamps: true}
 );
 
 
-module.exports = mongoose.model("Adherence", adherenceSchema );
+module.exports = mongoose.model("Customer", customerSchema );

@@ -2,7 +2,7 @@
 const mongoose = require("mongoose");
 const {Schema} = mongoose;
 
-const adherenceSchema = new Schema(
+const stirtankSchema = new Schema(
     {
         serialnumber: String,
         customer: String,
@@ -12,4 +12,4 @@ const adherenceSchema = new Schema(
 );
 
 
-module.exports = mongoose.model("Adherence", adherenceSchema );
+module.exports = mongoose.model("Stirtank", stirtankSchema );
