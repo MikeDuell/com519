@@ -5,10 +5,13 @@ const path = require("path");
 const app = express();
 const mongoose = require("mongoose");
 const { WEB_PORT, MONGODB_URI } = process.env;
+const bodyParser = require("body-parser");
 
 
-
- app.use(express.static(path.join(__dirname, "public")));
+// middleware
+app.use(express.static(path.join(__dirname, "public")));
+app.use(bodyParser.json());
+app.use(bodyParser.urlencoded({ extended: false}))
 
 // mongodb connection
 mongoose.connect(MONGODB_URI, { useNewUrlParser: true });
@@ -20,11 +23,12 @@ mongoose.connect(MONGODB_URI, { useNewUrlParser: true });
  });
 
 app.set("view engine", "ejs");
-// routes
+// route handlers
 
 const adherenceController = require("./controllers/adherence");
 app.get("/adherences", adherenceController.list)
 app.get("/adherences/delete/:id", adherenceController.delete)
+app.post("/create-adherence", adherenceController.create);
 
 const customerController = require("./controllers/customer");
 app.get("/customers", customerController.list)
@@ -33,11 +37,15 @@ app.get("/customers/delete/:id", customerController.delete)
 const stirtankController = require("./controllers/stirtank");
 app.get("/stirtanks", stirtankController.list)
 app.get("/stirtanks/delete/:id", stirtankController.delete)
+app.post("/create-stirtank", stirtankController.create);
 /**
  * notice above we are using dotenv. We can now pull the values from our environment
  */
 
- 
+
+
+
+
  
  
 
@@ -51,7 +59,7 @@ app.get("/overview", (req, res) => {
   res.render("overview")
 });
 
-app.get("/stirtank", (req, res) => {
+app.get("/stirtanks", (req, res) => {
   res.render("stirtanks")
   });
 app.get("/customers", (req, res) => {
@@ -60,12 +68,16 @@ app.get("/customers", (req, res) => {
 app.get("/signin", (req, res) => {
   res.render("signin")
 });
-app.get("/create-product", (req, res) => {
-  res.render("create-product")
+app.get("/create-stirtank", (req, res) => {
+  res.render("create-stirtank")
+});
+app.get("/create-adherence", (req, res) => {
+  res.render("create-adherence")
 });
 app.get("/create-user", (req, res) => {
   res.render("create-user")
 });
+
 
 app.listen(WEB_PORT, () => {
   console.log(`Example app listening at http://localhost:${WEB_PORT}`);

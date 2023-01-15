@@ -15,11 +15,6 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
 
     
-
-    
-
-
-
     <style>
       .bd-placeholder-img {
         font-size: 1.125rem;
@@ -81,7 +76,8 @@
     <%- include('common/header2'); -%>
     
 <div class="container">
-  <main>
+  
+    
     <div class="py-5 text-center">
       <img class="d-block mx-auto mb-1" src="bioreactor.png"  alt= "" width="150" height="150">
       <h2>Add a New Product to the database</h2>
@@ -90,10 +86,9 @@
     <div class="row-cols-auto">
       <div class="col-auto order-0">
         <div class="col-md-6" >
-          <label for="product" class="form-label">CHOOSE Product</label>
-          <select class="form-select" id="product" required>
+          <label for="size" class="form-label">CHOOSE size</label>
+          <select class="form-select" id="product" name= "size" required>
             <option value="">Choose...</option>
-            <option>Adherence </option>
             <option>STR50</option>
             <option>STR200</option>
             <option>STR500</option>
@@ -110,28 +105,28 @@
           <div class="row g-3">
             <div class="col-sm-6">
               <label for="serialNumber" class="form-label">Serial number</label>
-              <input type="text" class="form-control" id="serialnumber" placeholder="" value="" required>
+              <input type="text" class="form-control" id="serialnumber" name= "serialnumber" placeholder="" value="" required>
               <div class="invalid-feedback">
                 Valid first name is required.
               </div>
             </div>
             <div class="col-sm-6">
               <label for="cabinetSerialNumber" class="form-label">Electrical Cabinet S/N</label>
-              <input type="text" class="form-control" id="cabinetSerialNumber" placeholder="" value="" required>
+              <input type="text" class="form-control" id="cabinetSerialNumber"  name="cabinetserialnumber" placeholder="" value="" required>
               <div class="invalid-feedback">
                 Valid last name is required.
               </div>
             </div>
             <div class="col-sm-6">
               <label for="custname" class="form-label">Customer Name</label>
-              <input type="text" class="form-control" id="custname" placeholder="" value="" required>
+              <input type="text" class="form-control" id="custname" name= "custname"placeholder="" value="" required>
               <div class="invalid-feedback">
                 Valid first name is required.
               </div>
             </div>
             <div class="col-sm-6">
               <label for="custAdd" class="form-label">Address</label>
-              <input type="text" class="form-control" id="custAdd" placeholder="" value="" required>
+              <input type="text" class="form-control" id="custAdd" name= "custAdd" placeholder="" value="" required>
               <div class="invalid-feedback">
                 Valid last name is required.
               </div>
@@ -139,7 +134,7 @@
             <div class="col-12">
               <label for="custom1" class="form-label">DESCRIBE CUSTOMISATION</label>
               <div class="input-group has-validation">
-                <input type="text" class="form-control" id="custom1" >
+                <input type="text" class="form-control" id="custom1" name="custom1" >
               
               </div>
             </div>
@@ -148,14 +143,14 @@
 
             <div class="col-12">
               <label for="custom2" class="form-label">Describe Customisation </label>
-              <input type="text" class="form-control" id="custom2">
+              <input type="text" class="form-control" id="custom2" name="custom2">
             </div>
 
            
 
             <div class="col-md-5">
               <label for="customtype" class="form-label">MADE TO :</label>
-              <select class="form-select" id="customtype" required>
+              <select class="form-select" id="customtype" name= "customtype"required>
                 <option value="">Choose...</option>
                 <option>Hardware</option>
                 <option>Software</option>
@@ -169,7 +164,7 @@
 
             <div class="col-md-4">
               <label for="hwrev" class="form-label">HARDWARE REV NO :</label>
-              <select class="form-select" id="hwrev" required>
+              <select class="form-select" id="hwrev" name="hwrev" required>
                 <option value="">Choose...</option>
                 <option>6.0</option>
                 <option>6.1</option>
@@ -182,7 +177,7 @@
 
             <div class="col-md-3">
               <label for="swrev" class="form-label">SW REV NO :</label>
-              <select class="form-select" id="swrev" required>
+              <select class="form-select" id="swrev" name="swrev" required>
                 <option value="">Choose...</option>
                 <option>6.0</option>
                 <option>6.1</option>

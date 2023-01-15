@@ -4,17 +4,17 @@
   "description": "- Clone this repo \r - Install the dependencies -  `npm install`\r - Rename `.env.example` to `.env`. \r - **If you are using Atlas**, to host your DB you will need to update the `MONGODB_URI=<your database url>`. You should place `/wine` at the end of your connection url (e.g., `mongodb+srv://test:<password>@cluster0.x08wt.mongodb.net/wine?retryWrites=true&w=majority`)",
   "main": "app.js",
   "dependencies": {
+    "body-parser": "^1.20.1",
     "cors": "^2.8.5",
     "ejs": "^3.1.8",
     "mongoose": "^6.6.7",
     "nodemon": "^2.0.20",
     "parcel": "^2.7.0"
-   
   },
   "devDependencies": {},
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "dev":  "nodemon app.js"
+    "dev": "nodemon app.js"
   },
   "repository": {
     "type": "git",

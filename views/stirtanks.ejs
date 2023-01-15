@@ -15,7 +15,13 @@
 <body>
     <%- include('common/header2'); -%>
     <h1 class="text-center bg-danger ">View Stir tank reactors</h1>
+    <main>
 
+      <% if (message) { %>
+      <div class="alert alert-secondary" role="alert"text-center>
+        <%= message %>
+      </div>
+        <%}%>
     
     
        
@@ -33,7 +39,8 @@
             
                       
                       
-                      <td rows="3"><%=  stirtank.customer %></td>
+                      <td rows="3"><%=  stirtank.serialnumber %></td>
+                      <td><%= stirtank.customer %></td>
                       <td><%= stirtank.location %></td>
                       <td class="text-center">
                           <a  href="/stirtanks/delete/<%= stirtank._id %>" class="btn btn-danger btn-xs"><span class="glyphicon glyphicon-remove"></span> Del</a></td>
