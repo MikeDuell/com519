@@ -29,6 +29,8 @@ const adherenceController = require("./controllers/adherence");
 app.get("/adherences", adherenceController.list)
 app.get("/adherences/delete/:id", adherenceController.delete)
 app.post("/create-adherence", adherenceController.create);
+app.get("/adherences/update/:id", adherenceController.edit);
+app.post("/adherences/update/:id", adherenceController.update);
 
 const customerController = require("./controllers/customer");
 app.get("/customers", customerController.list)
@@ -38,6 +40,9 @@ const stirtankController = require("./controllers/stirtank");
 app.get("/stirtanks", stirtankController.list)
 app.get("/stirtanks/delete/:id", stirtankController.delete)
 app.post("/create-stirtank", stirtankController.create);
+app.get("/stirtanks/update/:id", stirtankController.edit);
+app.post("/stirtanks/update/:id", stirtankController.update);
+
 /**
  * notice above we are using dotenv. We can now pull the values from our environment
  */
@@ -51,7 +56,7 @@ app.post("/create-stirtank", stirtankController.create);
 
 
 
-// render pages for get method
+// render pages
 app.get("/", (req, res) => {
   res.render("overview")
 });
@@ -69,10 +74,10 @@ app.get("/signin", (req, res) => {
   res.render("signin")
 });
 app.get("/create-stirtank", (req, res) => {
-  res.render("create-stirtank")
+  res.render("create-stirtank", {errors: {}})
 });
 app.get("/create-adherence", (req, res) => {
-  res.render("create-adherence")
+  res.render("create-adherence", {errors: {}})
 });
 app.get("/create-user", (req, res) => {
   res.render("create-user")

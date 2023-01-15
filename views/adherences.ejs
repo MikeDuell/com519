@@ -17,7 +17,7 @@
     <%- include('common/header2'); -%>
     <h1 class="bg-danger text-center">Adherence Reactors</h1>
     <% if (message) { %>
-      <div class="alert alert-secondary" role="alert"text-center>
+      <div class="alert alert-secondary align-self-center" role="alert"  >
         <%= message %>
       </div>
         <%}%>
@@ -25,9 +25,12 @@
     <table class="table table-bordered table-primary table-striped table-scroll">
         <thead>
           <tr>
-            <th scope="col">Serial Number</th>
-            <th scope="col">Customer</th>
-            <th scope="col">Location</th>
+            <th scope="row=1">Serial Number</th>
+            <th scope="row=4">Customer</th>
+            
+            
+            <th scope="row=1">update/delete</th>
+
             
           </tr>
         </thead>
@@ -38,8 +41,13 @@
                 <td><%=  adherence.serialnumber %></td>
                 <td><%=  adherence.customer %></td>
                 <td><%=  adherence.location %></td>
-                <td class="text-center">
-                    <a  href="/adherences/delete/<%= adherence._id %>" class="btn btn-danger btn-xs"><span class="glyphicon glyphicon-remove"></span> Del</a></td>
+                
+                
+                <td>
+                  <a  href="/adherences/delete/<%= adherence._id %>" class="btn btn-danger btn-xs"> Del</a>
+                
+                   <a  href="/adherences/update/<%= adherence._id %>" class="btn btn-primary btn-xs"> Update</a>
+                </td>
                 
                 
             </tr> <% }); %>
