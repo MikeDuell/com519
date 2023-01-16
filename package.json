@@ -1,7 +1,7 @@
 {
   "name": "com519",
   "version": "1.0.0",
-  "description": "- Clone this repo \r - Install the dependencies -  `npm install`\r - Rename `.env.example` to `.env`. \r - **If you are using Atlas**, to host your DB you will need to update the `MONGODB_URI=<your database url>`. You should place `/wine` at the end of your connection url (e.g., `mongodb+srv://test:<password>@cluster0.x08wt.mongodb.net/wine?retryWrites=true&w=majority`)",
+  
   "main": "app.js",
   "dependencies": {
     "bcrypt": "^5.1.0",
