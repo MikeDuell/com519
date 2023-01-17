@@ -23,10 +23,7 @@
     "start": "node app.js",
     "dev": "nodemon app.js"
   },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/MikeDuell/com519.git"
-  },
+  
   "author": "",
   "license": "ISC",
   "bugs": {
