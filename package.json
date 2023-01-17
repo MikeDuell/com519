@@ -16,14 +16,13 @@
     "node": "^19.4.0",
     "nodemon": "^2.0.20",
     "nodenpm": "^0.1.6",
-    "parcel": "^2.7.0"
+    "parcel": "^2.8.2"
   },
   "devDependencies": {},
   "scripts": {
     "start": "node app.js",
     "dev": "nodemon app.js"
   },
-  
   "author": "",
   "license": "ISC",
   "bugs": {
